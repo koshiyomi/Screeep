@@ -1,6 +1,7 @@
 import clear from 'rollup-plugin-clear'
 import screeps from 'rollup-plugin-screeps'
 import copy from 'rollup-plugin-copy'
+import typescript from 'rollup-plugin-typescript2'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 
@@ -34,7 +35,7 @@ const pluginDeploy = config && config.copyPath ?
     screeps({ config, dryRun: !config })
 
 export default {
-    input: 'src/main.js',
+    input: 'src/main.ts',
     output: {
         file: 'dist/main.js',
         format: 'cjs',
@@ -48,6 +49,8 @@ export default {
         // 模块化依赖
         commonjs(),
         // 执行上传或者复制
+        // 编译 ts
+        typescript({ tsconfig: "./tsconfig.json" }),
         pluginDeploy
     ]
 };
