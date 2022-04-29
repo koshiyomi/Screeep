@@ -4,5 +4,12 @@
   "dependencies": {
     "@types/lodash": "^3.10.1",
     "@types/screeps": "^3.3.0"
+  },
+  "devDependencies": {
+    "rollup": "^2.70.2"
+  },
+  "scripts": {
+    "build": "rollup -cw",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
