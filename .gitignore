@@ -2,3 +2,4 @@ node_modules
 .gitattributes
 .idea
 dist
+.secret.json
